@@ -17,3 +17,9 @@ def get_user_contact(username):
 
 def get_current_chat(chatId):
     return get_object_or_404(Chat, id=chatId)
+
+
+
+def blog_list(request):
+    chats = Chat.objects.all()
+    return render(request, "chat/chat_list.html", {"chats": chats})
